@@ -1,19 +1,27 @@
 import { awards, certifications, education } from "@/lib/data";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SpotlightCard } from "@/components/motion/SpotlightCard";
+import { DecodeText } from "@/components/motion/DecodeText";
 
 export default function Credentials() {
   return (
-    <section id="credentials" className="border-t border-border px-6 py-20">
-      <div className="mx-auto max-w-5xl">
+    <section id="credentials" className="relative overflow-hidden border-t border-border px-6 py-20">
+      <div
+        aria-hidden="true"
+        className="bg-dot-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)]"
+      />
+      <div className="relative mx-auto max-w-5xl">
         <Reveal>
           <p className="section-label">Credentials</p>
-          <h2 className="mt-3 text-3xl font-semibold text-slate-50">
-            Education, certifications &amp; recognition
+          <h2 className="mt-3 font-display text-3xl font-semibold text-slate-50">
+            <DecodeText text="Education, certifications & recognition" />
           </h2>
         </Reveal>
 
-        <RevealGroup className="mt-10 grid gap-6 lg:grid-cols-3" stagger={0.08}>
+        <RevealGroup
+          className="mt-10 grid grid-flow-dense gap-4 sm:grid-cols-3"
+          stagger={0.08}
+        >
           <RevealItem>
             <SpotlightCard className="card-border h-full rounded-2xl p-6 transition-colors hover:border-accent/40">
               <h3 className="font-mono text-sm uppercase tracking-wide text-accent2">
@@ -26,12 +34,12 @@ export default function Credentials() {
             </SpotlightCard>
           </RevealItem>
 
-          <RevealItem className="lg:col-span-1">
+          <RevealItem className="sm:col-span-2 sm:row-span-2">
             <SpotlightCard className="card-border h-full rounded-2xl p-6 transition-colors hover:border-accent/40">
               <h3 className="font-mono text-sm uppercase tracking-wide text-accent2">
                 Certifications
               </h3>
-              <ul className="mt-4 space-y-3">
+              <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {certifications.map((cert) => (
                   <li key={cert.name} className="text-sm">
                     <p className="text-slate-100">{cert.name}</p>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { profile } from "@/lib/data";
+import { CommandPalette } from "@/components/motion/CommandPalette";
 
 const links = [
   { href: "#about", label: "About" },
@@ -66,12 +67,22 @@ export default function Nav() {
           ))}
         </ul>
 
-        <a
-          href={`mailto:${profile.email}`}
-          className="hidden rounded-full border border-accent/40 px-4 py-1.5 text-sm text-accent transition-colors hover:bg-accent/10 md:inline-block"
-        >
-          Get in touch
-        </a>
+        <div className="hidden items-center gap-3 md:flex">
+          <CommandPalette />
+          <a
+            href={profile.resumeUrl}
+            download
+            className="rounded-full border border-border px-4 py-1.5 text-sm text-slate-100 transition-colors hover:border-accent hover:text-accent"
+          >
+            Download CV
+          </a>
+          <a
+            href={`mailto:${profile.email}`}
+            className="rounded-full border border-accent/40 px-4 py-1.5 text-sm text-accent transition-colors hover:bg-accent/10"
+          >
+            Get in touch
+          </a>
+        </div>
 
         <button
           aria-label="Toggle menu"
@@ -104,6 +115,16 @@ export default function Nav() {
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href={profile.resumeUrl}
+                download
+                onClick={() => setOpen(false)}
+                className="block py-2 text-sm text-muted hover:text-accent"
+              >
+                Download CV
+              </a>
+            </li>
           </motion.ul>
         )}
       </AnimatePresence>

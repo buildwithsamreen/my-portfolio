@@ -2,17 +2,20 @@ import { skills } from "@/lib/data";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/Reveal";
 import { SpotlightCard } from "@/components/motion/SpotlightCard";
 import { Marquee } from "@/components/motion/Marquee";
+import { DecodeText } from "@/components/motion/DecodeText";
 
 const allSkills = skills.flatMap((group) => group.items);
 
+const bigCategories = new Set(["Frontend", "Tools & Practices"]);
+
 export default function Skills() {
   return (
-    <section id="skills" className="border-t border-border py-20">
+    <section id="skills" className="relative border-t border-border py-20">
       <div className="mx-auto max-w-5xl px-6">
         <Reveal>
           <p className="section-label">Skills</p>
-          <h2 className="mt-3 text-3xl font-semibold text-slate-50">
-            What I work with
+          <h2 className="mt-3 font-display text-3xl font-semibold text-slate-50">
+            <DecodeText text="What I work with" />
           </h2>
         </Reveal>
       </div>
@@ -22,9 +25,15 @@ export default function Skills() {
       </div>
 
       <div className="mx-auto max-w-5xl px-6">
-        <RevealGroup className="mt-10 grid gap-6 sm:grid-cols-2" stagger={0.08}>
+        <RevealGroup
+          className="mt-10 grid grid-flow-dense auto-rows-[minmax(9rem,auto)] grid-cols-2 gap-4 lg:grid-cols-4"
+          stagger={0.08}
+        >
           {skills.map((group) => (
-            <RevealItem key={group.category}>
+            <RevealItem
+              key={group.category}
+              className={bigCategories.has(group.category) ? "sm:col-span-2 lg:row-span-2" : ""}
+            >
               <SpotlightCard className="card-border h-full rounded-2xl p-6 transition-colors hover:border-accent/40">
                 <h3 className="font-mono text-sm uppercase tracking-wide text-accent2">
                   {group.category}
