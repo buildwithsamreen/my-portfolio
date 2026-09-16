@@ -20,40 +20,42 @@ body {
   color: #0a0a0c;
 }
 
-.section-label {
-  @apply font-mono text-xs uppercase tracking-[0.25em] text-accent;
-}
-
-.card-border {
-  @apply border border-border bg-panel/60 backdrop-blur-sm;
-}
-
-/* Loud, hard-edged button treatment — solid offset shadow instead of soft glow */
-.btn-hard {
-  position: relative;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 4px 4px 0 0 var(--btn-hard-shadow, #ff4d2e);
-}
-.btn-hard:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 0 var(--btn-hard-shadow, #ff4d2e);
-}
-.btn-hard:active {
-  transform: translate(1px, 1px);
-  box-shadow: 2px 2px 0 0 var(--btn-hard-shadow, #ff4d2e);
-}
-@media (prefers-reduced-motion: reduce) {
-  .btn-hard,
-  .btn-hard:hover,
-  .btn-hard:active {
-    transition: none;
-    transform: none;
+@layer components {
+  .section-label {
+    @apply font-mono text-xs uppercase tracking-[0.25em] text-accent;
   }
-}
 
-/* Full-bleed vivid gradient block */
-.gradient-block {
-  background: linear-gradient(135deg, #d7ff3f 0%, #ff4d2e 100%);
+  .card-border {
+    @apply border-2 border-white/10 border-t-accent/50 bg-panel/80 backdrop-blur-sm;
+  }
+
+  /* Loud, hard-edged button treatment — solid offset shadow instead of soft glow */
+  .btn-hard {
+    position: relative;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 4px 4px 0 0 var(--btn-hard-shadow, #ff4d2e);
+  }
+  .btn-hard:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 0 var(--btn-hard-shadow, #ff4d2e);
+  }
+  .btn-hard:active {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0 0 var(--btn-hard-shadow, #ff4d2e);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-hard,
+    .btn-hard:hover,
+    .btn-hard:active {
+      transition: none;
+      transform: none;
+    }
+  }
+
+  /* Full-bleed vivid gradient block */
+  .gradient-block {
+    background: linear-gradient(135deg, #d7ff3f 0%, #ff4d2e 100%);
+  }
 }
 
 @keyframes fade-up {

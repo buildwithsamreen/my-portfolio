@@ -8,7 +8,8 @@ import { CodeWindow } from "@/components/motion/CodeWindow";
 
 export default function Hero() {
   const reduce = useReducedMotion();
-  const nameChars = profile.name.split("");
+  const nameWords = profile.name.split(" ");
+  let charIndex = 0;
 
   return (
     <section id="top" className="relative overflow-hidden px-6 pb-16 pt-20">
@@ -16,17 +17,24 @@ export default function Hero() {
         <div>
           <p className="section-label animate-fade-up">Portfolio</p>
 
-          <h1 className="mt-4 flex flex-wrap font-display text-5xl font-bold leading-[0.95] tracking-tight text-slate-50 sm:text-6xl md:text-7xl lg:text-[5.5rem]">
-            {nameChars.map((char, i) => (
-              <motion.span
-                key={i}
-                initial={reduce ? undefined : { opacity: 0, y: 24, rotate: -6 }}
-                animate={{ opacity: 1, y: 0, rotate: 0 }}
-                transition={{ duration: 0.5, delay: 0.03 * i, ease: "easeOut" }}
-                className="inline-block"
-              >
-                {char === " " ? " " : char}
-              </motion.span>
+          <h1 className="mt-4 flex flex-wrap gap-x-[0.22em] font-display text-5xl font-bold leading-[0.95] tracking-tight text-slate-50 sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+            {nameWords.map((word, wi) => (
+              <span key={wi} className="inline-flex whitespace-nowrap">
+                {word.split("").map((char, ci) => {
+                  const i = charIndex++;
+                  return (
+                    <motion.span
+                      key={ci}
+                      initial={reduce ? undefined : { opacity: 0, y: 24, rotate: -6 }}
+                      animate={{ opacity: 1, y: 0, rotate: 0 }}
+                      transition={{ duration: 0.5, delay: 0.03 * i, ease: "easeOut" }}
+                      className="inline-block"
+                    >
+                      {char}
+                    </motion.span>
+                  );
+                })}
+              </span>
             ))}
           </h1>
 

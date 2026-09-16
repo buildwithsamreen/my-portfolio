@@ -96,7 +96,7 @@ export default function Experience() {
                         .filter((project) => !filter || project.tags.includes(filter))
                         .map((project) => (
                           <div key={project.name} className="animate-fade-up">
-                            <SpotlightCard className="card-border rounded-xl p-5 transition-colors hover:border-accent/40">
+                            <SpotlightCard className="card-border rounded-xl border-l-4 border-l-accent2/70 p-5 transition-colors hover:border-accent/40">
                               <h4 className="text-sm font-semibold text-slate-100">
                                 {project.name}
                               </h4>

@@ -103,7 +103,7 @@ export function CodeWindow() {
       initial={reduce ? undefined : { opacity: 0, y: 24, rotate: 1 }}
       animate={{ opacity: 1, y: 0, rotate: 0 }}
       transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-      className="card-border w-full max-w-md overflow-hidden rounded-xl shadow-2xl shadow-black/40"
+      className="card-border w-full max-w-md overflow-hidden rounded-xl border-2 border-accent2/40 shadow-[8px_8px_0_0_rgba(255,77,46,0.25)]"
     >
       <div className="flex items-center gap-2 border-b border-border bg-panel/80 px-4 py-3">
         <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
