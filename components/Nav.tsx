@@ -78,7 +78,7 @@ export default function Nav() {
           </a>
           <a
             href={`mailto:${profile.email}`}
-            className="rounded-full border border-accent/40 px-4 py-1.5 text-sm text-accent transition-colors hover:bg-accent/10"
+            className="btn-hard rounded-lg border-2 border-ink bg-accent px-4 py-1.5 text-sm font-bold text-ink"
           >
             Get in touch
           </a>

@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0a0e14",
-        panel: "#10151f",
-        border: "#1f2733",
-        accent: "#5eead4",
-        accent2: "#a78bfa",
-        muted: "#8b95a7",
+        ink: "#0a0a0c",
+        panel: "#161519",
+        border: "#2f2d33",
+        accent: "#D7FF3F",
+        accent2: "#FF4D2E",
+        muted: "#a6a4ac",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
@@ -31,7 +31,8 @@ const config: Config = {
       },
       backgroundImage: {
         "grid-glow":
-          "radial-gradient(circle at 20% 0%, rgba(94,234,212,0.10), transparent 45%), radial-gradient(circle at 80% 10%, rgba(167,139,250,0.10), transparent 40%)",
+          "radial-gradient(circle at 20% 0%, rgba(215,255,63,0.12), transparent 45%), radial-gradient(circle at 80% 10%, rgba(255,77,46,0.12), transparent 40%)",
+        "loud-gradient": "linear-gradient(135deg, #D7FF3F 0%, #FF4D2E 100%)",
       },
     },
   },

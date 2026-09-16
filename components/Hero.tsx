@@ -16,7 +16,7 @@ export default function Hero() {
         <div>
           <p className="section-label animate-fade-up">Portfolio</p>
 
-          <h1 className="mt-4 flex flex-wrap font-display text-4xl font-semibold leading-tight tracking-tight text-slate-50 sm:text-5xl md:text-6xl">
+          <h1 className="mt-4 flex flex-wrap font-display text-5xl font-bold leading-[0.95] tracking-tight text-slate-50 sm:text-6xl md:text-7xl lg:text-[5.5rem]">
             {nameChars.map((char, i) => (
               <motion.span
                 key={i}
@@ -50,13 +50,13 @@ export default function Hero() {
           >
             <MagneticButton
               href="#experience"
-              className="inline-block rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-ink shadow-[0_0_0_0_rgba(94,234,212,0.5)] transition-shadow hover:shadow-[0_0_30px_2px_rgba(94,234,212,0.35)]"
+              className="btn-hard inline-block rounded-lg border-2 border-ink bg-accent px-5 py-2.5 text-sm font-bold text-ink"
             >
               View experience
             </MagneticButton>
             <MagneticButton
               href={`mailto:${profile.email}`}
-              className="inline-block rounded-full border border-border px-5 py-2.5 text-sm font-medium text-slate-100 transition-colors hover:border-accent hover:text-accent"
+              className="btn-hard inline-block rounded-lg border-2 border-accent bg-transparent px-5 py-2.5 text-sm font-bold text-slate-50"
             >
               Contact me
             </MagneticButton>

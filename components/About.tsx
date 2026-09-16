@@ -41,14 +41,25 @@ export default function About() {
         </Reveal>
 
         <RevealGroup className="mt-10 grid gap-4 sm:grid-cols-2" stagger={0.08}>
-          {principles.map((p) => (
-            <RevealItem key={p.title} className={p.span}>
-              <SpotlightCard className="card-border h-full rounded-2xl p-6 transition-colors hover:border-accent/40">
-                <h3 className="font-display text-base font-semibold text-slate-50">{p.title}</h3>
-                <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">{p.detail}</p>
-              </SpotlightCard>
-            </RevealItem>
-          ))}
+          {principles.map((p) =>
+            p.title === "AI-augmented UX" ? (
+              <RevealItem key={p.title} className={p.span}>
+                <div className="gradient-block h-full rounded-2xl border-2 border-ink p-6">
+                  <h3 className="font-display text-base font-bold text-ink">{p.title}</h3>
+                  <p className="mt-2 max-w-md text-sm font-medium leading-relaxed text-ink/70">
+                    {p.detail}
+                  </p>
+                </div>
+              </RevealItem>
+            ) : (
+              <RevealItem key={p.title} className={p.span}>
+                <SpotlightCard className="card-border h-full rounded-2xl p-6 transition-colors hover:border-accent/40">
+                  <h3 className="font-display text-base font-semibold text-slate-50">{p.title}</h3>
+                  <p className="mt-2 max-w-md text-sm leading-relaxed text-muted">{p.detail}</p>
+                </SpotlightCard>
+              </RevealItem>
+            )
+          )}
         </RevealGroup>
       </div>
     </section>

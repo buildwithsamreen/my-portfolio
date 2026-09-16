@@ -11,13 +11,13 @@ section[id] {
 }
 
 body {
-  background-color: #0a0e14;
-  color: #e6eaf2;
+  background-color: #0a0a0c;
+  color: #f2f1f4;
 }
 
 ::selection {
-  background: rgba(94, 234, 212, 0.25);
-  color: #ffffff;
+  background: rgba(215, 255, 63, 0.35);
+  color: #0a0a0c;
 }
 
 .section-label {
@@ -26,6 +26,34 @@ body {
 
 .card-border {
   @apply border border-border bg-panel/60 backdrop-blur-sm;
+}
+
+/* Loud, hard-edged button treatment — solid offset shadow instead of soft glow */
+.btn-hard {
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 4px 4px 0 0 var(--btn-hard-shadow, #ff4d2e);
+}
+.btn-hard:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--btn-hard-shadow, #ff4d2e);
+}
+.btn-hard:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 0 var(--btn-hard-shadow, #ff4d2e);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-hard,
+  .btn-hard:hover,
+  .btn-hard:active {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* Full-bleed vivid gradient block */
+.gradient-block {
+  background: linear-gradient(135deg, #d7ff3f 0%, #ff4d2e 100%);
 }
 
 @keyframes fade-up {
@@ -49,18 +77,18 @@ body {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0e14;
+  background: #0a0a0c;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f2733;
+  background: #2f2d33;
   border-radius: 999px;
-  border: 2px solid #0a0e14;
+  border: 2px solid #0a0a0c;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #5eead4;
+  background: #d7ff3f;
 }
 html {
-  scrollbar-color: #1f2733 #0a0e14;
+  scrollbar-color: #2f2d33 #0a0a0c;
   scrollbar-width: thin;
 }
 
@@ -110,8 +138,8 @@ html {
   padding: 1px;
   background: radial-gradient(
     260px circle at var(--x, 50%) var(--y, 50%),
-    rgba(94, 234, 212, 0.55),
-    rgba(167, 139, 250, 0.25) 40%,
+    rgba(215, 255, 63, 0.65),
+    rgba(255, 77, 46, 0.4) 40%,
     transparent 70%
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -129,7 +157,7 @@ html {
   border-radius: inherit;
   background: radial-gradient(
     400px circle at var(--x, 50%) var(--y, 50%),
-    rgba(94, 234, 212, 0.06),
+    rgba(215, 255, 63, 0.1),
     transparent 60%
   );
   opacity: 0;
@@ -167,7 +195,7 @@ html {
   pointer-events: none;
   background: radial-gradient(
     600px circle at var(--cx, 50%) var(--cy, 50%),
-    rgba(94, 234, 212, 0.06),
+    rgba(215, 255, 63, 0.08),
     transparent 60%
   );
   transition: opacity 0.3s ease;

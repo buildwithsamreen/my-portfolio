@@ -20,20 +20,20 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="border-t border-border px-6 py-24">
+    <section id="contact" className="gradient-block px-6 py-24">
       <Reveal className="mx-auto max-w-3xl text-center">
-        <p className="section-label justify-center">Contact</p>
-        <h2 className="text-gradient-shift mt-3 bg-gradient-to-r from-accent via-accent2 to-accent bg-clip-text font-display text-3xl font-semibold text-transparent sm:text-4xl">
+        <p className="section-label justify-center text-ink/70">Contact</p>
+        <h2 className="mt-3 font-display text-4xl font-bold leading-tight text-ink sm:text-5xl">
           Let&apos;s build something fast, accessible, and a little bit AI-powered.
         </h2>
-        <p className="mt-4 text-muted">
+        <p className="mt-4 font-medium text-ink/70">
           Open to Lead / Senior Frontend roles and consulting engagements.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <MagneticButton
             href={`mailto:${profile.email}`}
-            className="inline-block rounded-full bg-accent px-6 py-3 text-sm font-medium text-ink shadow-[0_0_0_0_rgba(94,234,212,0.5)] transition-shadow hover:shadow-[0_0_30px_2px_rgba(94,234,212,0.35)]"
+            className="btn-hard inline-block rounded-lg border-2 border-ink bg-ink px-6 py-3 text-sm font-bold text-accent [--btn-hard-shadow:#ffffff]"
           >
             {profile.email}
           </MagneticButton>
@@ -43,7 +43,7 @@ export default function Contact() {
               type="button"
               onClick={copyEmail}
               aria-label="Copy email address"
-              className="card-border flex h-11 w-11 items-center justify-center rounded-full text-muted transition-colors hover:border-accent hover:text-accent"
+              className="btn-hard flex h-11 w-11 items-center justify-center rounded-lg border-2 border-ink bg-ink text-accent [--btn-hard-shadow:#ffffff]"
             >
               <span aria-hidden="true">⧉</span>
             </button>
@@ -54,7 +54,7 @@ export default function Contact() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 4 }}
                   transition={{ duration: 0.15 }}
-                  className="absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-full bg-accent px-3 py-1 font-mono text-xs text-ink"
+                  className="absolute left-1/2 top-full mt-2 -translate-x-1/2 whitespace-nowrap rounded-full border-2 border-ink bg-ink px-3 py-1 font-mono text-xs text-accent"
                 >
                   Copied!
                 </motion.span>
@@ -63,15 +63,15 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="mt-6 flex items-center justify-center gap-6 font-mono text-sm text-muted">
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-accent">
+        <div className="mt-6 flex items-center justify-center gap-6 font-mono text-sm font-semibold text-ink/70">
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="hover:text-ink">
             LinkedIn
           </a>
-          <span className="text-border">/</span>
-          <a href={profile.github} target="_blank" rel="noreferrer" className="hover:text-accent">
+          <span className="text-ink/30">/</span>
+          <a href={profile.github} target="_blank" rel="noreferrer" className="hover:text-ink">
             GitHub
           </a>
-          <span className="text-border">/</span>
+          <span className="text-ink/30">/</span>
           <span>{profile.location}</span>
         </div>
       </Reveal>

@@ -75,7 +75,7 @@ export default function Experience() {
                   key={job.company}
                   className="relative grid gap-4 pl-8 sm:grid-cols-[220px_1fr] sm:gap-8"
                 >
-                  <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full border-2 border-accent bg-ink shadow-[0_0_12px_2px_rgba(94,234,212,0.5)]" />
+                  <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full border-2 border-accent bg-ink shadow-[0_0_12px_2px_rgba(215,255,63,0.5)]" />
 
                   <div>
                     <h3 className="font-display text-lg font-semibold text-slate-50">{job.company}</h3>
