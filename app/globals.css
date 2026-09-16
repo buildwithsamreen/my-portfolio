@@ -6,6 +6,11 @@ html {
   scroll-behavior: smooth;
 }
 
+html.custom-cursor-active,
+html.custom-cursor-active * {
+  cursor: none;
+}
+
 section[id] {
   scroll-margin-top: 88px;
 }

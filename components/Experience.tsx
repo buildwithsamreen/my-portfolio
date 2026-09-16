@@ -78,6 +78,12 @@ export default function Experience() {
                   <span className="absolute -left-[7px] top-1 h-3 w-3 rounded-full border-2 border-accent bg-ink shadow-[0_0_12px_2px_rgba(215,255,63,0.5)]" />
 
                   <div>
+                    {job.logo && (
+                      <div className="mb-3 inline-flex h-10 items-center rounded-lg border-2 border-ink bg-white px-3">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={job.logo} alt={`${job.company} logo`} className="h-5 w-auto object-contain" />
+                      </div>
+                    )}
                     <h3 className="font-display text-lg font-semibold text-slate-50">{job.company}</h3>
                     <p className="mt-1 text-sm text-accent2">{job.role}</p>
                     <p className="mt-1 font-mono text-xs text-muted">{job.period}</p>

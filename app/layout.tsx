@@ -5,6 +5,7 @@ import { profile } from "@/lib/data";
 import { AuroraBackground, CursorGlow, GrainOverlay } from "@/components/motion/Ambient";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { BackToTop } from "@/components/motion/BackToTop";
+import { CustomCursor } from "@/components/motion/CustomCursor";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -49,6 +50,7 @@ export default function RootLayout({
         <AuroraBackground />
         <CursorGlow />
         <GrainOverlay />
+        <CustomCursor />
         {children}
         <BackToTop />
       </body>

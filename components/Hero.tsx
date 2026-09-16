@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { profile, stats } from "@/lib/data";
 import { MagneticButton } from "@/components/motion/MagneticButton";
 import { AnimatedStat } from "@/components/motion/AnimatedStat";
@@ -11,10 +12,20 @@ export default function Hero() {
   const nameWords = profile.name.split(" ");
   let charIndex = 0;
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const textY = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
+  const codeY = useTransform(scrollYProgress, [0, 1], [0, -110]);
+  const codeRotate = useTransform(scrollYProgress, [0, 1], [1, 5]);
+
   return (
-    <section id="top" className="relative overflow-hidden px-6 pb-16 pt-20">
+    <section ref={sectionRef} id="top" className="relative overflow-hidden px-6 pb-16 pt-20">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-8">
-        <div>
+        <motion.div style={reduce ? undefined : { y: textY, opacity: textOpacity }}>
           <p className="section-label animate-fade-up">Portfolio</p>
 
           <h1 className="mt-4 flex flex-wrap gap-x-[0.22em] font-display text-5xl font-bold leading-[0.95] tracking-tight text-slate-50 sm:text-6xl md:text-7xl lg:text-[5.5rem]">
@@ -99,11 +110,14 @@ export default function Hero() {
               </div>
             ))}
           </dl>
-        </div>
+        </motion.div>
 
-        <div className="hidden justify-self-center lg:flex lg:justify-self-end">
+        <motion.div
+          className="hidden justify-self-center lg:flex lg:justify-self-end"
+          style={reduce ? undefined : { y: codeY, rotate: codeRotate }}
+        >
           <CodeWindow />
-        </div>
+        </motion.div>
       </div>
 
       <motion.a

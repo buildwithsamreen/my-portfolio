@@ -54,6 +54,7 @@ export type Project = {
 
 export type Experience = {
   company: string;
+  logo?: string;
   role: string;
   period: string;
   summary: string;
@@ -63,6 +64,7 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     company: "GMG",
+    logo: "/logos/gmg.svg",
     role: "Lead Frontend Developer",
     period: "May 2024 - Present",
     summary:
@@ -90,6 +92,7 @@ export const experience: Experience[] = [
   },
   {
     company: "Dentsu",
+    logo: "/logos/dentsu.svg",
     role: "Lead Frontend Developer",
     period: "Apr 2022 - Dec 2023",
     summary:
@@ -111,6 +114,7 @@ export const experience: Experience[] = [
   },
   {
     company: "Publicis Sapient",
+    logo: "/logos/publicis-sapient.svg",
     role: "Senior Frontend Developer",
     period: "May 2019 - Apr 2022",
     summary:
@@ -132,6 +136,7 @@ export const experience: Experience[] = [
   },
   {
     company: "Tata Consultancy Services",
+    logo: "/logos/tcs.svg",
     role: "Frontend Developer",
     period: "Mar 2014 - May 2019",
     summary:
