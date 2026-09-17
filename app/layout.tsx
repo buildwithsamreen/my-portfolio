@@ -27,11 +27,16 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: `${profile.name} — ${profile.title}`,
   description: profile.summary,
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://samreen-zaidi-portfolio.netlify.app"),
   openGraph: {
     title: `${profile.name} — ${profile.title}`,
     description: profile.tagline,
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${profile.name} — ${profile.title}`,
+    description: profile.tagline,
   },
 };
 
