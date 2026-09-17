@@ -99,18 +99,13 @@ html {
   scrollbar-width: thin;
 }
 
-/* Aurora drift */
-@keyframes aurora-drift-1 {
-  0%, 100% { transform: translate(-10%, -10%) scale(1); }
-  50% { transform: translate(8%, 12%) scale(1.15); }
-}
-@keyframes aurora-drift-2 {
-  0%, 100% { transform: translate(10%, 5%) scale(1.1); }
-  50% { transform: translate(-8%, -10%) scale(1); }
-}
-@keyframes aurora-drift-3 {
-  0%, 100% { transform: translate(0%, 10%) scale(1); }
-  50% { transform: translate(-6%, -8%) scale(1.1); }
+/* Full-page blueprint grid — the site's base substrate, replacing the generic
+   blurred-orb "aurora" look. Restrained on purpose: two small corner glows
+   carry the accent color, the grid carries the "engineered" identity. */
+.bg-blueprint-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
 /* Animated gradient text */
@@ -192,20 +187,6 @@ html {
   opacity: 0.035;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Global cursor glow */
-.cursor-glow {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: radial-gradient(
-    600px circle at var(--cx, 50%) var(--cy, 50%),
-    rgba(215, 255, 63, 0.08),
-    transparent 60%
-  );
-  transition: opacity 0.3s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {

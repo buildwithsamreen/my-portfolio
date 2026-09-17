@@ -1,7 +1,7 @@
 export const profile = {
   name: "Samreen Hasan Zaidi",
   title: "Lead Frontend Developer",
-  tagline: "React & TypeScript Specialist — Full-Stack, AI-Powered UI",
+  tagline: "React & TypeScript at scale — with a growing AI habit.",
   location: "Dubai, UAE",
   email: "er.samreenzaidi@gmail.com",
   phone: "+971 588 726 757",
@@ -9,7 +9,7 @@ export const profile = {
   github: "https://github.com/buildwithsamreen",
   resumeUrl: "/resume-samreen-zaidi.pdf",
   summary:
-    "Lead Frontend Developer with 12+ years building high-traffic eCommerce and enterprise UIs in React, TypeScript, and Node.js, on platforms including Salesforce Commerce Cloud and Shopify. Ships full-stack, AI-powered features — including a visual-search chatbot and a predictive demand-forecasting tool — with clean RESTful and MongoDB-backed integrations, alongside WCAG-accessible interface design. Leads Agile teams of 5+ engineers from architecture through production release.",
+    "I've spent 12+ years making enterprise and high-traffic eCommerce interfaces fast, accessible, and hard to break — in React, TypeScript, and Node.js, on platforms like Salesforce Commerce Cloud and Shopify. Lately that means shipping AI-powered features that actually solve problems: a visual-search chatbot, a demand-forecasting tool that reads real inventory data instead of guessing. I lead a team of 5+ engineers, and I still care whether the focus ring looks right.",
 };
 
 export const stats = [

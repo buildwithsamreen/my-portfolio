@@ -193,6 +193,14 @@ export function Terminal() {
   const bodyRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    function handleOpenEvent() {
+      setOpen(true);
+    }
+    window.addEventListener("open-terminal", handleOpenEvent);
+    return () => window.removeEventListener("open-terminal", handleOpenEvent);
+  }, []);
+
+  useEffect(() => {
     function handleKeydown(e: KeyboardEvent) {
       const target = e.target as HTMLElement | null;
       const typing =

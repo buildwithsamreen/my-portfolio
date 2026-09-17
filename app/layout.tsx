@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/lib/data";
-import { AuroraBackground, CursorGlow, GrainOverlay } from "@/components/motion/Ambient";
+import { AuroraBackground, GrainOverlay } from "@/components/motion/Ambient";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { BackToTop } from "@/components/motion/BackToTop";
 import { CustomCursor } from "@/components/motion/CustomCursor";
@@ -54,7 +54,6 @@ export default function RootLayout({
       <body className="font-sans bg-ink text-slate-100 antialiased">
         <ScrollProgress />
         <AuroraBackground />
-        <CursorGlow />
         <GrainOverlay />
         <CustomCursor />
         {children}
